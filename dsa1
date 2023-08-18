@@ -1,0 +1,28 @@
+package javadsa;
+
+public class dsa2 {
+	public static int Dsa2(int[] arr) {
+        if (arr.length < 2) {
+            return 0;
+        }
+
+        int maxDifference = 0;
+        int minElement = arr[0];
+
+        for (int num : arr) {
+            if (num < minElement) {
+                minElement = num;
+            } else {
+                maxDifference = Math.max(maxDifference, num - minElement);
+            }
+        }
+
+        return maxDifference;
+    }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = {7, 9, 5, 6, 3, 2};
+        int output = Dsa2(arr);
+        System.out.println(output);
+	}
